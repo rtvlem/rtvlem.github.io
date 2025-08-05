@@ -198,7 +198,7 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/rtvlem_audio.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
@@ -234,7 +234,7 @@
     loop
     style="width: 45%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"
   >
-    <source src="static/videos/banner_video.mp4" type="video/mp4">
+    <source src="static/videos/rtvlem_slides_audio.mp4" type="video/mp4">
   </video>
 </div>
 </section>
@@ -262,18 +262,18 @@
 </section>
 
 <!-- Row 1: Camera Localisation & Vision-Language Embeddings -->
-<section class="section" style="margin-top: 1rem;">  
+<section class="section" style="margin-top: 1rem;">
   <div class="container is-max-desktop">
     <div class="columns is-variable is-8">
-      
+
       <!-- Camera Localisation -->
       <div class="column is-half">
         <h3 class="title is-4">Camera Localisation</h3>
         <p class="has-text-justified" style="hyphens: auto;">
-        We initialise the system by estimating camera pose through RGB-D odometry using a coarse-to-fine strategy. 
-        To ensure robustness, we run a separate dense tracking module alongside the main semantic map. 
-        This module maintains a signed distance field using a voxel hash map and enables stable pose estimation through frame-to-model alignment. 
-        By decoupling tracking from embedding integration, we preserve both high localisation accuracy and real-time efficiency. 
+        We initialise the system by estimating camera pose through RGB-D odometry using a coarse-to-fine strategy.
+        To ensure robustness, we run a separate dense tracking module alongside the main semantic map.
+        This module maintains a signed distance field using a voxel hash map and enables stable pose estimation through frame-to-model alignment.
+        By decoupling tracking from embedding integration, we preserve both high localisation accuracy and real-time efficiency.
         This separation is critical to avoid cumulative degradation in both geometry and semantic quality.
         </p>
          <figure class="image" style="margin-top: 2rem;">
@@ -285,9 +285,9 @@
       <div class="column is-half">
         <h3 class="title is-4">Segment-Aligned Vision-Language Embeddings</h3>
         <p class="has-text-justified" style="hyphens: auto;">
-        To encode rich semantic cues, we extract pixel-aligned vision-language embeddings for each frame. 
-        We use the Segment Anything model (SAM) to generate object-aware masks, which are then passed through a CLIP encoder to obtain segment-level features. 
-        Unlike prior approaches that rely on bounding box crops, our method directly associates segment embeddings with pixel coordinates. 
+        To encode rich semantic cues, we extract pixel-aligned vision-language embeddings for each frame.
+        We use the Segment Anything model (SAM) to generate object-aware masks, which are then passed through a CLIP encoder to obtain segment-level features.
+        Unlike prior approaches that rely on bounding box crops, our method directly associates segment embeddings with pixel coordinates.
         This alignment ensures precise spatial grounding of semantic features while avoiding dilution from irrelevant context.
         <br><br>
         </p>
@@ -303,7 +303,7 @@
 <section class="section" style="margin-top: -3.5rem; margin-bottom: 1rem;">
   <div class="container is-max-desktop">
     <div class="columns is-variable is-8">
-      
+
       <!-- Refinement and Masking -->
       <div class="column is-half">
         <h3 class="title is-4">Refinement and Masking Strategy</h3>
@@ -354,7 +354,7 @@
         <h2 class="title is-3">Evaluation on Real Systems</h2>
         <div class="content has-text-justified">
           <p>
-            We collect RGB-D sequences using an Orbbec Femto Bolt Time-of-Flight camera in three setups: handheld, wrist-mounted on a Franka Emika arm, and mounted on a Segway RMP Lite 220 mobile base. Color and depth images are captured at 1280x720 resolution and 30 Hz.          
+            We collect RGB-D sequences using an Orbbec Femto Bolt Time-of-Flight camera in three setups: handheld, wrist-mounted on a Franka Emika arm, and mounted on a Segway RMP Lite 220 mobile base. Color and depth images are captured at 1280x720 resolution and 30 Hz.
           </p>
           <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
             <img src="static/images/handheld.jpg" alt="Handheld setup" style="width: 30%; height: auto;">
@@ -362,7 +362,7 @@
             <img src="static/images/mobile_base.png" alt="Mounted on mobile base" style="width: 31.25%; height: auto;">
           </div>
           <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
-            <br> 
+            <br>
             Add real images of the setups here.
           </p>
           <div style="display: flex; justify-content: center; overflow: visible;">
@@ -378,13 +378,13 @@
         <br><br>
         <h3 class="title is-4">Query on 2D Image</h3>
         <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
-        We compare our method against <a href="https://concept-fusion.github.io/" target="_blank">ConceptFusion</a> and <a href="https://langsplat.github.io/" target="_blank">LangSplat</a> using two OpenCLIP variants. 
-        For evaluation, we manually annotated frames from the kitchen sequence and computed the mIoU PR AUC across multiple text queries. While LangSplat achieves higher accuracy, it fails to operate in real time due to its offline embedding pipeline. 
+        We compare our method against <a href="https://concept-fusion.github.io/" target="_blank">ConceptFusion</a> and <a href="https://langsplat.github.io/" target="_blank">LangSplat</a> using two OpenCLIP variants.
+        For evaluation, we manually annotated frames from the kitchen sequence and computed the mIoU PR AUC across multiple text queries. While LangSplat achieves higher accuracy, it fails to operate in real time due to its offline embedding pipeline.
         Our method offers a strong trade-off: it improves text-to-embedding alignment over ConceptFusion and achieves real-time inference at 1.53 Hz.
-        The table below reports mIoU PR AUC scores for different text queries on the <i>kitchen</i> sequence. 
-        Our method with ViT-B/16 delivers the best real-time segmentation accuracy <b>(bold)</b>. 
+        The table below reports mIoU PR AUC scores for different text queries on the <i>kitchen</i> sequence.
+        Our method with ViT-B/16 delivers the best real-time segmentation accuracy <b>(bold)</b>.
         LangSplat, although included as an upper-bound reference, is not real-time capable<sup>*</sup>.
-      </p>  
+      </p>
       </div>
       </div>
       <div style="width: 100%; margin: auto;">
@@ -458,7 +458,7 @@
         </table>
       </div>
       <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
-        <br> 
+        <br>
         A few images of these queries (side-by-side)
       </p>
   </div>
@@ -469,15 +469,15 @@
         <br><br>
         <h3 class="title is-4">Text-Based 3D Querying</h3>
         <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
-        By combining camera pose estimation, masked local embedding extraction, and their integration into a 3D map, our method produces a unified color and embedding representation in real time. 
-        We qualitatively compare query responses on the <i>kitchen</i> sequence against ConceptFusion and LangSplat. 
-        Unlike these baselines, which operate offline, our system processes streaming data and selectively skips frames to maintain real-time performance. 
+        By combining camera pose estimation, masked local embedding extraction, and their integration into a 3D map, our method produces a unified color and embedding representation in real time.
+        We qualitatively compare query responses on the <i>kitchen</i> sequence against ConceptFusion and LangSplat.
+        Unlike these baselines, which operate offline, our system processes streaming data and selectively skips frames to maintain real-time performance.
         Our multivalued hash map yields fewer visual artifacts than ConceptFusion's point cloud and outperforms LangSplat in unobserved regions, while also providing metric-accurate geometry essential for robotic applications.
         <br><br>
-        3D environment reconstruction of the <i>kitchen</i> sequence with similarity heatmaps for text queries 
-        (<span style="color: blue;">blue</span>: low, <span style="color: red;">red</span>: high). 
-        The queries <i>coffee machine</i>, <i>milk</i>, <i>sink</i>, and <i>socket</i> are marked using red and black bounding boxes, respectively. 
-        Thanks to the use of masked local embeddings, our method produces sharper query responses compared to ConceptFusion and exhibits fewer outliers than LangSplat. 
+        3D environment reconstruction of the <i>kitchen</i> sequence with similarity heatmaps for text queries
+        (<span style="color: blue;">blue</span>: low, <span style="color: red;">red</span>: high).
+        The queries <i>coffee machine</i>, <i>milk</i>, <i>sink</i>, and <i>socket</i> are marked using red and black bounding boxes, respectively.
+        Thanks to the use of masked local embeddings, our method produces sharper query responses compared to ConceptFusion and exhibits fewer outliers than LangSplat.
         Additionally, our dense color model (first row) contains significantly fewer visual artifacts.
       </p>
       </div>
@@ -626,7 +626,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="item item-images" style="height: 100%;">
           <div style="height: 300px; display: flex; justify-content: center; gap: 10px;">
             <div style="position: relative;">
@@ -730,10 +730,10 @@
       <div class="column is-full">
       <br>
       <p style="text-align: justify;">
-        We showcase qualitative reconstructions and similarity heatmaps from the <i>kitchen</i>, <i>workshop</i>, and <i>table</i> sequences, demonstrating how query specificity affects localization. 
-        In the <i>kitchen</i>, a general query like <i>coffee</i> highlights both the coffee machine and the milk carton, capturing broader contextual relevance. 
-        In contrast, querying for <i>milk</i> results in a focused response limited to the milk carton. 
-        Similarly, in the <i>workshop</i>, a precise query for the <i>Bosch drill</i> produces a sharper activation than the more generic <i>drill</i> query. 
+        We showcase qualitative reconstructions and similarity heatmaps from the <i>kitchen</i>, <i>workshop</i>, and <i>table</i> sequences, demonstrating how query specificity affects localization.
+        In the <i>kitchen</i>, a general query like <i>coffee</i> highlights both the coffee machine and the milk carton, capturing broader contextual relevance.
+        In contrast, querying for <i>milk</i> results in a focused response limited to the milk carton.
+        Similarly, in the <i>workshop</i>, a precise query for the <i>Bosch drill</i> produces a sharper activation than the more generic <i>drill</i> query.
         These examples highlight the open-set nature of our method, enabling flexible interaction across diverse environments and semantic levels.
       </p>
       </div>
@@ -877,15 +877,15 @@
 <section class="hero is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">        
+      <div class="column is-four-fifths">
         <br><br>
         <h2 class="title is-3">Interactive Tasks</h2>
         <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
-         To move beyond passive perception, robots must engage with their environment through goal-directed actions informed by high-level semantic understanding. 
-         Our approach enables this by grounding language queries in a unified 3D representation that is built online from RGB-D input. 
-         We explore how such a representation facilitates interactive tasks in both local and extended workspaces, ranging from precision-driven pick-and-place operations to semantically guided navigation across multi-room environments. 
+         To move beyond passive perception, robots must engage with their environment through goal-directed actions informed by high-level semantic understanding.
+         Our approach enables this by grounding language queries in a unified 3D representation that is built online from RGB-D input.
+         We explore how such a representation facilitates interactive tasks in both local and extended workspaces, ranging from precision-driven pick-and-place operations to semantically guided navigation across multi-room environments.
          These demonstrations highlight the system's ability to generalize across scales and platforms while maintaining real-time responsiveness and open-vocabulary flexibility.
-      </p>  
+      </p>
       </div>
       </div>
     </div>
@@ -896,10 +896,10 @@
       <div class="column is-full">
         <h3 class="title is-4">Interactive Manipulation</h3>
         <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
-        In our interactive pick-and-place system, users can specify both the object to grasp and the desired placement location through natural language queries. 
-        Our method continuously estimates the camera pose, builds a 3D color map, and fuses local language-conditioned embeddings into the scene in real time. 
-        When a query is issued, the system computes similarity between the 3D embedding map and the text, segmenting the scene into source and target point clouds. 
-        From these, we extract a grasp pose by projecting points onto a plane aligned with the robot's approach direction and selecting the most compact region suitable for a parallel gripper.        
+        In our interactive pick-and-place system, users can specify both the object to grasp and the desired placement location through natural language queries.
+        Our method continuously estimates the camera pose, builds a 3D color map, and fuses local language-conditioned embeddings into the scene in real time.
+        When a query is issued, the system computes similarity between the 3D embedding map and the text, segmenting the scene into source and target point clouds.
+        From these, we extract a grasp pose by projecting points onto a plane aligned with the robot's approach direction and selecting the most compact region suitable for a parallel gripper.
       </p>
       </div>
     </div>
@@ -1001,9 +1001,9 @@
       <div class="column is-full">
         <h3 class="title is-4">Interactive Navigation</h3>
         <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
-        Our method enables real-time, memory-efficient reconstruction across large-scale environments while maintaining both spatial coverage and semantic precision. 
-        In the office-floor scenario, we reconstruct a unified 3D map that supports multiple spatial scales, both multi-room and object-level queries. 
-        The system is capable of identifying broad semantic regions such as floors that extend across several rooms, as well as individual objects including a first aid kit and a bookshelf. 
+        Our method enables real-time, memory-efficient reconstruction across large-scale environments while maintaining both spatial coverage and semantic precision.
+        In the office-floor scenario, we reconstruct a unified 3D map that supports multiple spatial scales, both multi-room and object-level queries.
+        The system is capable of identifying broad semantic regions such as floors that extend across several rooms, as well as individual objects including a first aid kit and a bookshelf.
         The system remains interactive throughout the reconstruction, updating the map live as new data streams in.
       </p>
       </div>
@@ -1021,7 +1021,7 @@
             <img src="static/images/navigation/floor3_rgb.png" alt="Image 1" style="height: 100%; display: block;">
             <span style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
             RGB Room Map
-          </span>              
+          </span>
           </div>
           <!-- Image 2 with simple text -->
           <div style="position: relative;">
@@ -1039,7 +1039,7 @@
           <img src="static/images/navigation/floor3_rgb_book_shelf.png" alt="Image 1" style="height: 100%; display: block;">
           <span style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
           RGB Room Map
-        </span>              
+        </span>
         </div>
         <!-- Image 2 with simple text -->
         <div style="position: relative;">
@@ -1057,7 +1057,7 @@
             <img src="static/images/navigation/floor3_rgb_first_aid_kit.png" alt="Image 1" style="height: 100%; display: block;">
             <span style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
             RGB Room Map
-          </span>              
+          </span>
           </div>
           <!-- Image 2 with simple text -->
           <div style="position: relative;">
@@ -1075,7 +1075,7 @@
             <img src="static/images/navigation/floor3_rgb_first_aid_kit.png" alt="Image 1" style="height: 100%; display: block;">
             <span style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
             RGB Room Map
-          </span>              
+          </span>
           </div>
           <!-- Image 2 with simple text -->
           <div style="position: relative;">
@@ -1125,7 +1125,7 @@
 </footer>
 
 <!-- Statcounter tracking code -->
-  
+
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
