@@ -238,7 +238,7 @@
     </div>
 
     <div style="display: flex; justify-content: center; width: 100%; margin: 20px 0;">
-      <video poster="banner" id="tree" autoplay controls loop
+      <video poster="banner" id="tree" autoplay controls muted loop
         style="width: 45%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
         <source src="static/videos/rtvlem_slides_audio.mp4" type="video/mp4">
       </video>
@@ -388,17 +388,17 @@
               wrist-mounted on a Franka Emika arm, and mounted on a Segway RMP Lite 220 mobile base. Color and depth
               images are captured at 1280x720 resolution and 30 Hz.
             </p>
-            <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
+            <!-- <div style="display: flex; gap: 10px; justify-content: center; align-items: center;">
               <img src="static/images/handheld.jpg" alt="Handheld setup" style="width: 30%; height: auto;">
               <img src="static/images/franka_wrist.png" alt="Wrist-mounted on robot arm"
                 style="width: 53.25%; height: auto;">
               <img src="static/images/mobile_base.png" alt="Mounted on mobile base"
                 style="width: 31.25%; height: auto;">
-            </div>
-            <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
+            </div> -->
+            <!-- <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
               <br>
               Add real images of the setups here.
-            </p>
+            </p> -->
             <div style="display: flex; justify-content: center; overflow: visible;">
             </div>
           </div>
@@ -444,91 +444,91 @@
           </thead>
           <tbody>
             <tr>
-              <td>Sugar</td>
+              <td>sugar</td>
               <td>0.170</td>
               <td>0.070</td>
               <td>0.043</td>
               <td>0.075</td>
             </tr>
             <tr>
-              <td>Milk</td>
+              <td>milk</td>
               <td>0.702</td>
               <td>0.954</td>
               <td>0.325</td>
               <td>0.535</td>
             </tr>
             <tr>
-              <td>Faucet</td>
+              <td>faucet</td>
               <td>0.030</td>
               <td>0.704</td>
               <td>0.138</td>
               <td>0.119</td>
             </tr>
             <tr>
-              <td>Towel</td>
+              <td>towel</td>
               <td>0.613</td>
               <td>0.875</td>
               <td>0.726</td>
               <td>0.709</td>
             </tr>
             <tr>
-              <td>Detergent</td>
+              <td>detergent</td>
               <td>0.159</td>
               <td>0.953</td>
               <td>0.291</td>
               <td>0.288</td>
             </tr>
             <tr>
-              <td>Chair</td>
+              <td>chair</td>
               <td>0.895</td>
               <td>0.570</td>
               <td>0.375</td>
               <td>0.346</td>
             </tr>
             <tr>
-              <td>Coffee Machine</td>
+              <td>coffee machine</td>
               <td>0.403</td>
               <td>0.972</td>
               <td>0.685</td>
               <td>0.779</td>
             </tr>
             <tr>
-              <td>Sink</td>
+              <td>sink</td>
               <td>0.495</td>
               <td>0.699</td>
               <td>0.529</td>
               <td>0.569</td>
             </tr>
             <tr>
-              <td>Socket</td>
+              <td>socket</td>
               <td>0.354</td>
               <td>0.763</td>
               <td>0.396</td>
               <td>0.362</td>
             </tr>
             <tr>
-              <td>Sponge</td>
+              <td>sponge</td>
               <td>0.404</td>
               <td>0.677</td>
               <td>0.235</td>
               <td>0.281</td>
             </tr>
             <tr>
-              <td>Paper Towel</td>
+              <td>paper towel</td>
               <td>0.365</td>
               <td>0.516</td>
               <td>0.459</td>
               <td>0.559</td>
             </tr>
             <tr>
-              <td>Tabletop</td>
+              <td>table top</td>
               <td>0.261</td>
               <td>0.537</td>
               <td>0.399</td>
               <td>0.494</td>
             </tr>
             <tr style="font-weight: bold;">
-              <td>Average</td>
+              <td>average</td>
               <td>0.404</td>
               <td>0.691*</td>
               <td>0.383</td>
@@ -537,10 +537,10 @@
           </tbody>
         </table>
       </div>
-      <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
+      <!-- <p class="has-text-justified" style="hyphens: auto; overflow-wrap: break-word; word-break: break-word;">
         <br>
         A few images of these queries (side-by-side)
-      </p>
+      </p> -->
     </div>
 
     <div class="container is-max-desktop">
@@ -1185,20 +1185,20 @@
 
 
   <div class="container is-max-desktop">
-    <div id="results-carousel" class="carousel results-carousel">
 
+    <!-- room-level -->
+    <div id="results-carousel" class="carousel results-carousel">
       <div class="item item-images" style="height: 100%;">
-        <div style="height: 300px; display: flex; justify-content: center; gap: 10px;">
+        <div style="justify-content: center; gap: 10px;">
           <div style="position: relative;">
-            <img src="static/images/navigation/floor3_rgb.png" alt="Image 1" style="display: block;">
+            <img src="static/images/navigation/floor3_rgb.png" alt="Image 1" style="width: 100%; display: block;">
             <span
               style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
               RGB Room Map
             </span>
           </div>
-          <!-- Image 2 with simple text -->
           <div style="position: relative;">
-            <img src="static/images/navigation/floor3_sim_floor.png" alt="Image 2" style="display: block;">
+            <img src="static/images/navigation/floor3_sim_floor.png" alt="Image 2" style="width: 100%; display: block;">
             <span
               style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
               Query: <span style="color: red;">Floor</span>
@@ -1207,6 +1207,29 @@
         </div>
       </div>
 
+      <div class="item item-images" style="height: 100%;">
+        <div style="justify-content: center; gap: 10px;">
+          <div style="position: relative;">
+            <img src="static/images/navigation/floor3_rgb.png" alt="Image 1" style="width: 100%; display: block;">
+            <span
+              style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
+              RGB Room Map
+            </span>
+          </div>
+          <div style="position: relative;">
+            <img src="static/images/navigation/floor3_sim_ceiling.png" alt="Image 2"
+              style="width: 100%; display: block;">
+            <span
+              style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
+              Query: <span style="color: red;">Ceiling</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- object-level -->
+    <div id="results-carousel" class="carousel results-carousel">
       <div class="item item-images" style="height: 100%;">
         <div style="height: 300px; display: flex; justify-content: center; gap: 10px;">
           <div style="position: relative;">
@@ -1246,28 +1269,6 @@
             <span
               style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
               Query: <span style="color: red;">First Aid Kit</span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="item item-images" style="height: 100%;">
-        <div style="height: 300px; display: flex; justify-content: center; gap: 10px;">
-          <div style="position: relative;">
-            <img src="static/images/navigation/floor3_rgb_first_aid_kit.png" alt="Image 1"
-              style="height: 100%; display: block;">
-            <span
-              style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
-              RGB Room Map
-            </span>
-          </div>
-          <!-- Image 2 with simple text -->
-          <div style="position: relative;">
-            <img src="static/images/navigation/floor3_sim_ceiling.png" alt="Image 2"
-              style="height: 100%; display: block;">
-            <span
-              style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
-              Query: <span style="color: red;">Ceiling</span>
             </span>
           </div>
         </div>
