@@ -212,6 +212,49 @@
   </section>
   <!-- End teaser video -->
 
+  <section class="hero is-small">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+
+        <div class="column">
+          <model-viewer
+            src="static/models/map_1753172611340.glb"
+            style="width: 600px; height: 600px;"
+            auto-rotate camera-controls
+          />
+        </div>
+
+        <div class="column">
+          <model-viewer
+            src="static/models/sim_1753172584156_first_aid_kit.glb"
+            style="width: 600px; height: 600px; background-color: #404040" auto-rotate camera-controls
+          />
+          <span
+            style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
+            Query:
+            <span style="color: red;">first aid kit</span>
+          </span>
+        </div>
+
+        <div class="column">
+          <model-viewer
+            src="static/models/sim_1753172601770_floor.glb"
+            style="width: 600px; height: 600px; background-color: #404040"
+            auto-rotate camera-controls
+          />
+          <span
+            style="position: absolute; top: 8px; left: 8px; background: white; color: black; font-weight: bold; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 2px solid black; box-shadow: 0 0 2px rgba(0,0,0,0.2);">
+            Query:
+            <span style="color: red;">floor</span>
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Paper abstract -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
